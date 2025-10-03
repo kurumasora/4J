@@ -1,74 +1,236 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-#define BALL_WEIGHT 100
+/*
+①テニスボールを約半分ずつの２つの集合に分ける(B_1/B_2)
 
-// 与えられたボール集合の合計を求める
-int sum_of_balls(int balls[], int identify[], int size) {
+②B_1を秤にのせる
+
+③B_1の重さが100の倍数->B_2に不良品がある
+B_2の重さが100の倍数でない->B_1に不良品がある
+
+不良品に含まれている集合に対し
+    a, 1つのボールしかなければ、そのボールを不良品として、アルゴリズムを終了する
+    b, 複数のボールが含まれていれば、①〜③を繰り返す。
+
+
+*/
+
+void divide_group_in_half(int ball[], int num)
+{
+    int len = num;
+    int half = 0;
+    int start = 0;
     int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += balls[identify[i]];
+    int order = 0;//不良品は何番目か？
+
+    for (int i = 0; i < len; i++)
+    {
+        sum += ball[i];
     }
-    return sum;
-}
+    printf("\n");
+    printf("%d\n", sum);
 
-// 集合の合計値を表示する
-void print_current_sum(int balls[], int identify[], int size) {
-    int sum = sum_of_balls(balls, identify, size);
-    printf("不良品を含む集合の合計: %d\n", sum);
-}
+    while (len > 1)
+    {
+        int sum_B1 = 0;
+        int sum_B2 = 0;
 
-// 不良品を探す
-void find_defective_ball(int balls[], int num) {
-    int id[num];
-    for (int i = 0; i < num; i++) {
-        id[i] = i;
-    }
+        half = len / 2;
 
-    // 最初に全体の合計を計算
-    int total_sum = sum_of_balls(balls, id, num);
-    printf("分割前のボールの合計: %d\n", total_sum);
-
-    int expected_sum = num * BALL_WEIGHT;  // 正常なら期待される合計
-    int diff = total_sum - expected_sum;   // 正常との差分
-
-    int size = num;
-
-    while (size > 1) {
-        int mid = size / 2;
-
-        int sum_first_half = sum_of_balls(balls, id, mid);
-        int expected_first_half = mid * BALL_WEIGHT;
-        int diff_first_half = sum_first_half - expected_first_half;
-
-        // diffと同じ符号なら不良品は前半にいる
-        if ((diff > 0 && diff_first_half > 0) || (diff < 0 && diff_first_half < 0)) {
-            size = mid;
-        } else {
-            // 後半にいるのでidを後半に更新
-            for (int i = 0; i < size - mid; i++) {
-                id[i] = id[mid + i];
-            }
-            size = size - mid;
+        for (int i = 0; i < half; i++)
+        {
+            sum_B1 += ball[start + i];
         }
 
-        print_current_sum(balls, id, size);
-    }
+        for (int i = 0; i < len - half; i++)
+        {
 
-    // 出力順を「重さ→番号」に変更
-    printf("不良品の重さ: %d\n", balls[id[0]]);
-    printf("不良品のボール番号: %d\n", id[0]+1);
+            sum_B2 += ball[(start + half) + i];
+    
+        }
+
+        
+
+        if (sum_B1 % 100 == 0)
+        {
+            start = half;
+            printf("%d\n", sum_B2);
+            len = len - half;
+            order = half;
+        }
+
+        else
+        {
+            printf("%d\n", sum_B1);
+            len = len / 2;
+            order = start;
+        }
+
+    }
+    printf("%d\n", order+1);
 }
 
-int main() {
-    int num = 0;
-    int balls[100];
-    scanf("%d", &num);
 
-    for (int i = 0; i < num; i++) {
-        scanf("%d", &balls[i]);
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int b[10000];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &b[i]);
     }
 
-    find_defective_ball(balls, num);
+    divide_group_in_half(b, n);
 
     return 0;
 }
+
+/*void ball_detect_if_even(int ball[], int *num)
+{
+    // sum, defective_sum(不良品が見つかるまで繰り返し), orderを出力したい
+    int B1[5000];
+    int B2[5000];
+
+    int len = *num;
+
+    int start = 0;
+    int half = 0;
+
+    int sum = 0;
+    int defective_sum = 0;
+
+    int order = 0;//どこに欠陥品があるか
+
+    for (int i = 0; i < len; i++)
+    {
+        sum += ball[i];
+    }
+    printf("\n");
+    printf("%d\n", sum);
+
+    while (len > 1)//ボールが一個になると終了
+    {
+
+        int sum_B1 = 0;
+        int sum_B2 = 0;
+
+        half = len/2;
+
+        for (int i = 0; i < len / 2; i++)
+        {
+            B1[i] = ball[i];
+            sum_B1 += ball[i];
+        }
+
+        for (int i = 0; i < half; i++)
+        {
+            B2[i] = ball[half + i];
+            sum_B2 += ball[half + i];
+        }
+
+        if (sum_B1 % 100 == 0)
+        {
+            defective_sum = sum_B2;
+            printf("%d\n", sum_B2);
+            start = half;
+            order += half;
+        }
+        else if (sum_B1 % 100 != 0)
+        {
+            defective_sum = sum_B1;
+            printf("%d\n", sum_B1);
+            start = 0;
+        }
+
+        len /= 2;
+        for(int i = 0; i < len; i++){
+            ball[i] = ball[start + i];
+        }
+
+        if(len%2!=0){
+            ball_detect_if_odd(ball, &len);
+        }
+
+
+    }
+
+
+    printf("%d\n", order+1);
+
+    // printf("%d\n", sum_B1);
+    // printf("%d\n", sum_B2);
+}
+
+
+void ball_detect_if_odd(int ball[], int *num)
+{
+    int B1[5000];
+    int B2[5000];
+
+    int len = *num;
+
+    int start = 0;
+    int half = 0;
+
+    int sum = 0;
+    int defective_sum = 0;
+
+    int order = 0;
+
+    for (int i = 0; i < len; i++)
+    {
+        sum += ball[i];
+    }
+    printf("%d\n", sum);
+
+    while (len > 1)
+    {
+
+        int sum_B1 = 0;
+        int sum_B2 = 0;
+
+        half = len/2;//奇数は切り捨て
+
+        for (int i = 0; i < len / 2; i++)
+        {
+            B1[i] = ball[i];
+            sum_B1 += ball[i];
+        }
+
+        for (int i = 0; i < len - half; i++)
+        {
+            B2[i] = ball[half+1 + i];
+            sum_B2 += ball[half+1 + i];
+        }
+
+        if (sum_B1 % 100 == 0)
+        {
+            defective_sum = sum_B2;
+            printf("%d\n", sum_B2);
+            start = half;
+            order += half;
+        }
+        else if (sum_B1 % 100 != 0)
+        {
+            defective_sum = sum_B1;
+            printf("%d\n", sum_B1);
+            start = 0;
+        }
+
+        len /= 2;
+        for(int i = 0; i < len; i++){
+            ball[i] = ball[start + i];
+        }
+
+        if(len%2!=0){
+            ball_detect_if_even(ball, &len);
+        }
+
+
+    }
+}*/
