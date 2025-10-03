@@ -1,0 +1,9 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/user1/Desktop/4J/algorithm/2/algo-data-2-2'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _divide_group_in_half, symObjAddr: 0x0, symBinAddr: 0x100000CC0, symSize: 0x190 }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _divide_group_in_half, symObjAddr: 0x0, symBinAddr: 0x100000CC0, symSize: 0x190 }
+  - { offset: 0x129, size: 0x8, addend: 0x0, symName: _does_B2_have_defective_ball, symObjAddr: 0x190, symBinAddr: 0x100000E50, symSize: 0x60 }
+  - { offset: 0x17B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1F0, symBinAddr: 0x100000EB0, symSize: 0xCB }
+...
