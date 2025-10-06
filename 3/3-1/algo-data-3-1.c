@@ -5,6 +5,7 @@
 int main() {
     IntStack s;
     if(Initialize(&s,10000)==-1){
+        puts("スタックの生成に失敗しました。");
         return 1;
     }
 
@@ -15,7 +16,8 @@ int main() {
         scanf("%d",&op);
         if(op==1){
             scanf("%d",&v);
-            printf("%d\n",Push(&s,v)); 
+            Push(&s,v);
+            printf("%d\n",v); 
         }else if(op==2){
             Pop(&s, &v);
             printf("%d\n", v);
