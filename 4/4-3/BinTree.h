@@ -2,9 +2,9 @@
 #pragma once
 
 typedef struct __node {
-    int data;
-    struct __node *left;
-    struct __node *right;
+    int data;           //データ
+    struct __node *left;//左子ノードへのポインタ
+    struct __node *right;//右子ノードへのポインタ
 } BinNode;
 
 BinNode *search(BinNode *p, const int x);
