@@ -1,50 +1,27 @@
 #include<stdio.h>
 #define MAX_HEIGHT 10
-#define MAX_NODES ((1<<MAX_HEIGHT)-1)//2^h-1(節の数、左シフト演算でべき乗計算)
-
-void binary_tree(int height,int tree[],int nodes){
-    int count = 1;
-    int level;//現在の木の深さ
-
-    for(level=1;level<=height;level++){
-        int current_nodes = 1<<(level-1);//2^(level-1)で現在のレベルでの節の数
-        printf("%d:",level);
-        int j;
-
-        for(j=0;j<current_nodes;j++){
-            if (count>nodes){
-                break;
-            }
-            printf("%d",tree[count]);
-            count++;
-        }
-        printf("\n");
-
-    }
-    
-}
 
 int main(){
-    int h;
-    int n;
-    int t[MAX_NODES];
-    int i;
+    int h;//
+    int n = (1 << h)-1;//左ビットシフトで2^h-1が節の個数となる
+    scanf("%d", &h);
+    int tree[(1<<MAX_HEIGHT)-1] = {0};//1023個
 
-    printf("height of tree:");
-    scanf("%d",&h);
     
-    n = (1<<h)-1;
-
-    printf("node of tree\n");
-    for(i=1;i<=n;i++){
-        printf("→");
-        scanf("%d",&t[i]);
+    for(int i = 0; i < n; i++){
+        scanf("%d", &tree[i]);
     }
-
-
-    binary_tree(h,t,n);
-
-
-    
-    return 0;
+    int count = 0;
+    int start = 0;
+    int print_level = 0;
+    for(int i = 1; i <= n; i = i * 2){//配列をi*2個で区切って表示する
+        count = i;
+        printf("%d",print_level + 1);
+        for(int j = 0; j < count; j++){
+            printf("%d",tree[start + j]);
+        }
+        start += count;//表示の始まりの位置を更新する
+        printf("\n");
+        print_level++;
+    }
 }
