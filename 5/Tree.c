@@ -5,7 +5,7 @@
 #include "Queue.h"
 
 static Node setinit(Node *n){
-	n->data = 50;
+	n->data = 50;//root
 
 	add(n, 21);
 	add(n, 65);
