@@ -1,10 +1,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Tree.h"
-#include "Queue.h"
+#include "./includes/Tree.h"
+#include "./includes/Queue.h"
 
-static Node setinit(Node *n){
+static void setinit(Node *n){
 	n->data = 50;//root
 
 	add(n, 21);
@@ -67,7 +67,7 @@ void add(Node *n, int x){//木構造のノード n に、新しい子ノード�
 	n->count++;
 }
 
-Node initTree(Node *n){
+void initTree(Node *n){
 	n->count = 0;
 	n->child = malloc(sizeof(Node));
 	setinit(n);
