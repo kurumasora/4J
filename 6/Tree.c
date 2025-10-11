@@ -4,13 +4,13 @@
 #include "Tree.h"
 #include "Queue.h"
 
-static Node setinit(Node *n){
+static void setinit(Node *n){
 	n->data = 50;
 
 	add(n, 21);
 	add(n, 65);
 
-	Node *p1 = &n->child[0];
+	Node *p1 = &n->child[0];//child[0]は左子ノード
 	add(p1, 10);
 	add(p1, 14);
 
@@ -26,7 +26,7 @@ static Node setinit(Node *n){
 	add(p4, 1);
 	add(p4, 84);
 
-	Node *p5 = &p1->child[1];
+	Node *p5 = &p1->child[1];//child[1]は右子ノード
 	add(p5, 12);
 	add(p5, 13);
 
@@ -47,14 +47,15 @@ void add(Node *n, int x){
 	if (n->child == NULL){
 		exit(EXIT_FAILURE);
 	}
-	n->child[n->count].data = x;
+	n->child[n->count].data = x;//値を代入
+	/*子をもたないノードを作成*/
 	n->child[n->count].count = 0;
 	n->child[n->count].child = NULL;
 
 	n->count++;
 }
 
-Node initTree(Node *n){
+void initTree(Node *n){
 	n->count = 0;
 	n->child = malloc(sizeof(Node));
 	setinit(n);
