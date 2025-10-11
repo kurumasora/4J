@@ -1,22 +1,29 @@
 #include <stdio.h>
 
-void move(int no, int x, int y, int *count){
-    (*count)++; 
-    if (no > 1){
-        move(no-1, x, 6-x-y, count);
+void hanoi_move(int disk_id, int from_peg, int to_peg, int* count)
+{
+    if (disk_id > 1)
+    {
+        hanoi_move(disk_id - 1, from_peg, 6 - from_peg - to_peg, count);//開始軸から中間軸の移動
+        
     }
-    printf("%d %d %d\n", no, x, y);
-    if (no > 1){
-        move (no-1, 6-x-y, y, count);
+    printf("%d %d %d\n", disk_id, from_peg, to_peg);
+    (*count)++;
+    if (disk_id > 1)
+    {
+        hanoi_move(disk_id - 1, 6 - from_peg - to_peg, to_peg, count);//中間軸から目的軸への移動
+        
     }
+    
 }
 
-int main(void){
-    int n, p = 0;
-    printf("n? : ");
+int main()
+{
+    int count = 0;
+    int n = 0;
+    printf("n?:");
     scanf("%d", &n);
-
-    move(n,1,3,&p);
-    printf("%d\n", p);
+    hanoi_move(n, 1, 3, &count);
+    printf("%d\n", count);
     return 0;
 }
