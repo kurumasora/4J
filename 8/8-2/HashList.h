@@ -8,12 +8,12 @@ typedef enum {
 
 typedef struct {
 	int data;
-	Status stat;
+	Status stat;//要素の状態
 } Bucket;
 
 typedef struct {
 	int size;
-	Bucket *table;
+	Bucket *table;//ハッシュ表の先頭要素へのポインタ
 } HashList;
 
 int Initialize(HashList *h, int size);

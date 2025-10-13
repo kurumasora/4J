@@ -28,19 +28,19 @@ int Initialize(HashList *h, int size){
 }
 
 Bucket *Search(const HashList *h, const int x){
-	int key = hash(x, h->size);
-	Bucket *p = &h->table[key];
+	int key = hash(x, h->size);//インデックス
+	Bucket *p = &h->table[key];//ハッシュ表の key 番目のバケットを指すポインタ p を用意する
 	for (int i=0; p->stat != Empty && i < h->size; i++){
 		if (p->stat == Occupied && p->data == x){
 			return p;
 		}
 
-		key = rehash(key, h->size);
-		p = &h->table[key];
+		key = rehash(key, h->size);//キーが変わった
+		p = &h->table[key];//またセッティング
 	}
 	return NULL;
-}
 
+}
 int Add(HashList *h, const int x){
 	int key = hash(x, h->size);
 	Bucket *p = &h->table[key];
@@ -61,7 +61,7 @@ int Add(HashList *h, const int x){
 
 int Remove(HashList *h, const int x){
 	Bucket *p = Search(h, x);
-	if (p == NULL){
+	if (p == NULL){//消去対象なし
 		return 1;
 	}
 
@@ -69,9 +69,9 @@ int Remove(HashList *h, const int x){
 	return 0;
 }
 
-void Dump(const HashList *h){
+void Dump(const HashList *h){//全バケットを表示
 	for (int i=0; i<h->size; i++){
-		printf("%02d : ", i);
+		printf("%021d : ", i);
 		if (h->table[i].stat == Occupied){
 			printf("%d", h->table[i].data);
 		}
