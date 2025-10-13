@@ -10,7 +10,7 @@ static Node *AllocNode(void)
 }
 
 // 作った一つのノードに対し、データそのものと次のノードのポインタを格納する
-static void SetNode(Node *n, int value, const Node *next) //(どこに作るか, 代入する値, 次はどこか)
+static void SetNode(Node *n, int value,  Node *next) //(どこに作るか, 代入する値, 次はどこか)
 {
     n->data = value;
     n->next = next;
@@ -77,9 +77,58 @@ void removeRear(List *l, int value)
     }
 }
 
-Node *search(List *l, const int value, int *n, Node **pre){
+Node *search(List *l, const int x, int *n, Node **pre){
     Node *ptr = l->head;
-    while(ptr != NULL){
-       
+    *n = 1;
+    *pre = NULL;
+    while (ptr != NULL){
+        if (ptr->data == x){
+            l->crnt = ptr; 
+            return ptr;
+        }
+        *pre = ptr;
+        ptr = ptr->next;
+        (*n)++;
     }
+    *n = -1;
+    *pre = NULL;
+    return NULL;
+}
+
+
+int searchIndex(List *l, const int x){
+    int n;
+    Node *___pre, *___ptr;
+    ___ptr = search(l, x, &n, &___pre);
+    if (___ptr == NULL){
+        return -1;
+    }
+    return n;
+}
+
+int size(List *l){
+    return l->n;
+}
+
+void clear(List *l){
+    while (l->head != NULL){
+        removeFront(l);
+    }
+    l->crnt = NULL;
+}
+
+void print(const List *l){
+    if (l->head == NULL){
+        
+    } else {
+        Node *ptr = l->head;
+        while (ptr != NULL) {
+            printf("%d\n", ptr->data);
+            ptr = ptr->next;
+        }
+    }
+}
+
+void terminate(List *l){
+    clear(l);
 }
