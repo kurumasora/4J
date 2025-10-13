@@ -77,3 +77,56 @@ void removeRear(List *l, int value)
     }
 }
 
+int removeSearch(List *l, const int x){
+    int ___n;
+    Node *pre;
+    Node *ptr = search(l, x, &___n, &pre);
+    if (ptr == NULL){
+        return -1;//該当ノードなし
+    }
+    if (pre == NULL) {//先頭ノードだった場合(search関数でpreはNullと初期化されている)
+        l->head = ptr->next;
+    } else {
+        pre->next = ptr->next;//preのnextはptrのnextつまりptrはとばされる
+    }
+    free(ptr);
+    l->crnt = pre;
+    return 1;
+}
+
+int searchIndex(List *l, const int x){
+    int n;
+    Node *___pre, *___ptr;
+    ___ptr = search(l, x, &n, &___pre);
+    if (___ptr == NULL){
+        return -1;
+    }
+    return n;
+}
+
+int size(List *l){
+    return l->n;
+}
+
+void clear(List *l){
+    while (l->head != NULL){
+        removeFront(l);
+    }
+    l->crnt = NULL;
+}
+
+void print(const List *l){
+    if (l->head == NULL){
+        
+    } else {
+        Node *ptr = l->head;
+        while (ptr != NULL) {
+            printf("%d\n", ptr->data);
+            ptr = ptr->next;
+        }
+    }
+}
+
+void terminate(List *l){
+    clear(l);
+}
