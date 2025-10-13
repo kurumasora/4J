@@ -77,10 +77,30 @@ void removeRear(List *l, int value)
     }
 }
 
+///@param *n　見つかった位置のアドレスを格納
+///@param **pre 見つかったノードの直前のノードのアドレスを格納
+Node *search(List *l, const int x, int *n, Node **pre){//**preはmain関数の参照渡しのremovesearchの参照わたし
+    Node *ptr = l->head;
+    *n = 1;
+    *pre = NULL;//先頭ノードの前にはノードがないため初期化
+    while (ptr != NULL){
+        if (ptr->data == x){//データが一致すれば
+            l->crnt = ptr; //現在注目ノードとして更新
+            return ptr;//データが一致したノードのアドレスを返す
+        }
+        *pre = ptr;
+        ptr = ptr->next;
+        (*n)++;//*nなのは、別の関数で値を返すから
+    }
+    *n = -1;//見つからなかったという印
+    *pre = NULL;//直前ノードもnull
+    return NULL;
+}
+
 int removeSearch(List *l, const int x){
     int ___n;
     Node *pre;
-    Node *ptr = search(l, x, &___n, &pre);
+    Node *ptr = search(l, x, &___n, &pre);//この関数では使用しないため&___n（アンダーバーをつける）
     if (ptr == NULL){
         return -1;//該当ノードなし
     }
