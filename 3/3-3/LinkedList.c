@@ -57,7 +57,7 @@ void removeFront(List *l)
     }
 }
 
-void removeRear(List *l, int value)
+void removeRear(List *l)
 {
     if (l->head == NULL)
     {
