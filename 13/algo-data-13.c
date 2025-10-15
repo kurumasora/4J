@@ -22,7 +22,7 @@ static void downheap(int a[], int left, int right, int* dhc) {
     a[parent] = temp;
 }
 
-void heapsort(int a[], int n, int* dhc, int* sc) {
+void heap_sort(int a[], int n, int* dhc, int* sc) {
     for (int i = (n - 1) / 2; i >= 0; i--) {
         downheap(a, i, n - 1, dhc);
     }
@@ -38,16 +38,15 @@ int main(){
     int sc = 0;
     int dhc = 0;
 
-    printf("heapsort\n");
     scanf("%d", &nx);
     int *x = calloc(nx, sizeof(int));
 
     for (int i = 0; i < nx; i++) {
-        printf("x[%d]: ", i);
+        
         scanf("%d", &x[i]);
     }
 
-    heapsort(x, nx, &dhc, &sc);
+    heap_sort(x, nx, &dhc, &sc);
 
     printf("\nsorted!\n");
     for (int i = 0; i < nx; i++) {
