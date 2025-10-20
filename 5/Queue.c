@@ -1,8 +1,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Queue.h"
-#include "Node.h"
+#include "./includes/Queue.h"
+#include "./includes/Node.h"
 
 int initQueue(Queue *q, int max) {
     q->num = q->front = q->rear = 0;//初期化

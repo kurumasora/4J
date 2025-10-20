@@ -40,7 +40,7 @@ int Add(ChainHash *h, const int x){
     int key = hash(x, h->size);
     Node *p = h->table[key];
     Node *temp;
-    while (p != NULL){
+    while (p != NULL){//NULLは値がある場合
         if (p->data == x){
             return 1;
         }
@@ -56,15 +56,15 @@ int Add(ChainHash *h, const int x){
 
 int Remove(ChainHash *h, const int x){
     int key = hash(x, h->size);
-    Node *p = h->table[key];
-    Node **pp = &h->table[key];
+    Node *p = h->table[key];//ノードそのもの
+    Node **pp = &h->table[key];//ノードのアドレス
     while (p != NULL){
         if (p->data == x){
-            *pp = p->next;
+            *pp = p->next;//アドレスを次に進める
             free(p);
             return 0;
         }
-        pp = &p->next;
+        pp = &p->next;//次の参照先を指し示す
         p = p->next;
     }
     return 1;

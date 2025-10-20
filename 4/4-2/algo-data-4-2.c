@@ -13,7 +13,7 @@ int recursive_sum(int *v,int n, int *count){
     }else{
         int *A1,*A2;
 
-        int left = (int)floor(n/2.0);
+        int left = (int)floor(n/2.0);//床巻数（奇数だったら2で割った値を切り捨て）
         int right = n - left;
         A1 = (int*)malloc(left * sizeof(int));
         A2 = (int*)malloc(right * sizeof(int));        
@@ -42,7 +42,7 @@ int recursive_sum(int *v,int n, int *count){
 }
 
 int main(){
-    int n=0;
+    int n = 0;
    
     int count = 0;
 

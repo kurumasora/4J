@@ -1,7 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "BinTree.h"
+/*
+<2分探索木>
 
+左部分木のノードのキー値は、そのノードのキー値より小さい
+右部分木のノードのキー値は、そのノードのキー値より大きい
+
+                11
+            5       15
+          4   7   13   18
+
+
+→ 4, 5, 7, 11, 13, 15, 18
+
+
+*/
 static BinNode *allocBinNode(void){
     return calloc(1, sizeof(BinNode));
 }
@@ -14,9 +28,9 @@ static void setBinNode(BinNode *n, const int x, BinNode *left, BinNode *right){
 
 BinNode *search(BinNode *p, const int x){
     if (p == NULL){
-        return NULL;
+        return NULL;//子にノードがないなら探索失敗
     } else if (p->data == x){
-        return p;
+        return p;//着目ノードが目的とするノードと等しいなら探索成功
     } else if (p->data > x){
         search(p->left, x);
     } else {
@@ -24,11 +38,13 @@ BinNode *search(BinNode *p, const int x){
     }
 }
 
+
+
 BinNode *add(BinNode *p, const int x){
-    int cond;
+    
     if (p == NULL){
         p = allocBinNode();
-        setBinNode(p, x, NULL, NULL);
+        setBinNode(p, x, NULL, NULL);//leftとrightがNULLであるということは、xのキー値をもつ根だけのノードを作成している
     } else if (p->data == x){
         return NULL;
     } else if (p->data > x){
@@ -40,35 +56,36 @@ BinNode *add(BinNode *p, const int x){
 }
 
 int removeNode(BinNode **root, const int x){
-    BinNode *next, *temp;
-    BinNode **left;
-    BinNode **p = root;
+    BinNode *replacement, *temp;//tempは削除対象ノードを一時的に保持して free するために使われる
+    //replacementは削除後にその場所へ繰り上げる置換ノード（例えば左部分木の最大ノード）を指すために使われます。
+    BinNode **max;
+    BinNode **link = root;
 
-    while ((*p)->data != x){
-        if (*p == NULL){
+    while ((*link)->data != x){//消去する対象のノードがあるまで探索する
+        if (*link == NULL){
             return -1;
-        } else if ((*p)->data > x){
-            p = &((*p)->left);
+        } else if ((*link)->data > x){
+            link = &((*link)->left);
         } else {
-            p = &((*p)->right);
+            link = &((*link)->right);
         }
     }
     
-    if ((*p)->left == NULL){
-        next = (*p)->right;
-    } else {
-        left = &((*p)->left);
-        while ((*left)->right != NULL){
-            left = &(*left)->right;             // max
+    if ((*link)->left == NULL){//消去対象（親）の子ノードが一つだった場合
+        replacement = (*link)->right;
+    } else {                    //消去対象の子ノードが２つだった場合
+        max = &((*link)->left);
+        while ((*max)->right != NULL){
+            max = &(*max)->right;             
         }
-        next = *left;
-        *left = (*left)->left;
-        next->left = (*p)->left;
-        next->right = (*p)->right;
+        replacement = *max;
+        *max = (*max)->left;
+        replacement->left = (*link)->left;
+        replacement->right = (*link)->right;
     }
 
-    temp = *p;
-    *p = next;
+    temp = *link;
+    *link = replacement;
     free(temp);
 
     return 0;

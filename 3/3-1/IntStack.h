@@ -22,9 +22,9 @@ void Print(const IntStack *s);
 //5:スタックを空にし、データの個数を出力（７）//
 void Clear(IntStack *s);
 //6:最大容量を出力//
-int Capacity(IntStack *s);
+int Capacity(const IntStack *s);
 //7:データの個数//
-int Size(IntStack *s);
+int Size(const IntStack *s);
 //8:空なら1、そうでないなら0を出力//
 int IsEmpty(const IntStack *s);
 //9:満杯なら1、そうでないなら0を出力//

@@ -7,7 +7,7 @@ typedef struct __node {
 
 typedef struct {
     int size;
-    Node **table;
+    Node **table;//ノードの配列で構成されている。Node*は構造体のポインタである。 よって**tableはノードの先頭ポインタである
 } ChainHash;
 
 int Initialize(ChainHash *h, int size);

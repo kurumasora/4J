@@ -1,8 +1,15 @@
 
+/*横型探索ではキューの概念が必要。
+  
+    先に発見した順に処理する」必要があるため、
+    FIFO（先入れ先出し）が本質です。これを実現するのがキューです。
+
+
+*/
 
 #include <stdio.h>
-#include "Tree.h"
-#include "Queue.h"
+#include "./includes/Tree.h"
+#include "./includes/Queue.h"
 #define CAPACITY 16384
 
 void discover(Node *n, Queue *q){    
