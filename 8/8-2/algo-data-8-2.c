@@ -3,7 +3,9 @@
 
 int main(void){
 	HashList hash;
-	Initialize(&hash, 20);
+	int n = 0;
+	scanf("%d", &n);
+	Initialize(&hash, n);
 	Bucket *temp;
 	int op = 1;
 	int v, result, opCounter;
