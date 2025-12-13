@@ -1,0 +1,510 @@
+[
+    {
+        "id": "3d4971a399ba870f",
+        "type": "tab",
+        "label": "OpenPLC LEDFan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "881402af23f00708",
+        "type": "modbustcp-server",
+        "name": "OpenPLC",
+        "host": "127.0.0.1",
+        "port": "502",
+        "unit_id": "1",
+        "reconnecttimeout": "200"
+    },
+    {
+        "id": "563bdc9cacae827f",
+        "type": "ui_group",
+        "name": "デジタル出力 - DO",
+        "tab": "1493d20b9d308104",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5c56f0085f38e96c",
+        "type": "ui_group",
+        "name": "デジタル入力 - DI",
+        "tab": "1493d20b9d308104",
+        "order": 2,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "542416c8e91eafac",
+        "type": "ui_group",
+        "name": "スイッチ（ボタン）",
+        "tab": "1493d20b9d308104",
+        "order": 3,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1493d20b9d308104",
+        "type": "ui_tab",
+        "name": "OpenPLC 制御モニター",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7e539f9c9f21156d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED ダッシュボード",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "YYYY/MM/DD",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "fd9c0aaa5bbadd86",
+        "type": "ui_spacer",
+        "z": "3d4971a399ba870f",
+        "name": "spacer",
+        "group": "542416c8e91eafac",
+        "order": 3,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "0d258ecbd4213e39",
+        "type": "ui_spacer",
+        "z": "3d4971a399ba870f",
+        "name": "spacer",
+        "group": "542416c8e91eafac",
+        "order": 4,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "78116e48658057ef",
+        "type": "modbustcp-read",
+        "z": "3d4971a399ba870f",
+        "name": "%QX100.0-3",
+        "topic": "",
+        "dataType": "Coil",
+        "adr": "800",
+        "quantity": "1",
+        "rate": "5",
+        "rateUnit": "s",
+        "server": "881402af23f00708",
+        "ieeeType": "off",
+        "ieeeBE": true,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "19a9206c552e34fc"
+            ]
+        ]
+    },
+    {
+        "id": "dac61165e7d81288",
+        "type": "modbustcp-read",
+        "z": "3d4971a399ba870f",
+        "name": "%IX100.0-3",
+        "topic": "",
+        "dataType": "Input",
+        "adr": "800",
+        "quantity": "1",
+        "rate": "3",
+        "rateUnit": "s",
+        "server": "881402af23f00708",
+        "ieeeType": "off",
+        "ieeeBE": true,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "795229daa3e59d1b"
+            ]
+        ]
+    },
+    {
+        "id": "19a9206c552e34fc",
+        "type": "function",
+        "z": "3d4971a399ba870f",
+        "name": "色の名前に変換",
+        "func": "if (msg.payload[0] == true) {\n    msg.QX100_0 = \"green\"; \n} else {\n    msg.QX100_0 = \"red\";\n}\nif (msg.payload[1] == true) {\n    msg.QX100_1 = \"green\"; \n} else {\n    msg.QX100_1 = \"red\";\n}\nif (msg.payload[2] == true) {\n    msg.QX100_2 = \"green\"; \n} else {\n    msg.QX100_2 = \"red\";\n}\nif (msg.payload[3] == true) {\n    msg.QX100_3 = \"green\"; \n} else {\n    msg.QX100_3 = \"red\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "23649621a73747b3",
+                "9959e2cd58565c9b",
+                "ae91d38d97057924",
+                "ab2e5671572a4b13",
+                "9b2acd3f542af049"
+            ]
+        ]
+    },
+    {
+        "id": "23649621a73747b3",
+        "type": "debug",
+        "z": "3d4971a399ba870f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9959e2cd58565c9b",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "563bdc9cacae827f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX100_1（CR1）",
+        "format": "<font color={{msg.QX100_1}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 680,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ae91d38d97057924",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "563bdc9cacae827f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX100_2（CR2）",
+        "format": "<font color={{msg.QX100_2}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ab2e5671572a4b13",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "563bdc9cacae827f",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX100_3（CR1）",
+        "format": "<font color={{msg.QX100_3}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "795229daa3e59d1b",
+        "type": "function",
+        "z": "3d4971a399ba870f",
+        "name": "色の名前に変換",
+        "func": "if (msg.payload[0] == true) {\n    msg.IX100_0 = \"green\"; \n} else {\n    msg.IX100_0 = \"red\";\n}\nif (msg.payload[1] == true) {\n    msg.IX100_1 = \"green\"; \n} else {\n    msg.IX100_1 = \"red\";\n}\nif (msg.payload[2] == true) {\n    msg.IX100_2 = \"green\"; \n} else {\n    msg.IX100_2 = \"red\";\n}\nif (msg.payload[3] == true) {\n    msg.IX100_3 = \"green\"; \n} else {\n    msg.IX100_3 = \"red\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "0c75b67ae596ee3f",
+                "70b0e9f04a918f3e",
+                "36085d65e95112e5",
+                "812b517efc73d9b1",
+                "d598323039b09aa8"
+            ]
+        ]
+    },
+    {
+        "id": "0c75b67ae596ee3f",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "5c56f0085f38e96c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX100_0 ",
+        "format": "<font color={{msg.IX100_0}} ><i class=\"fa fa-circle\" style=\"font-size:32px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "70b0e9f04a918f3e",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "5c56f0085f38e96c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX100_1 ",
+        "format": "<font color={{msg.IX100_1}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "36085d65e95112e5",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "5c56f0085f38e96c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX100_2（SW1）",
+        "format": "<font color={{msg.IX100_2}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "812b517efc73d9b1",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "5c56f0085f38e96c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX100_3（SW2）",
+        "format": "<font color={{msg.IX100_3}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b27a3937090e38f4",
+        "type": "modbustcp-write",
+        "z": "3d4971a399ba870f",
+        "name": "%QX100.3",
+        "topic": "",
+        "dataType": "Coil",
+        "adr": "803",
+        "server": "881402af23f00708",
+        "x": 370,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d598323039b09aa8",
+        "type": "debug",
+        "z": "3d4971a399ba870f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6ed922a717ce7771",
+        "type": "modbustcp-write",
+        "z": "3d4971a399ba870f",
+        "name": "%QX100.2",
+        "topic": "",
+        "dataType": "Coil",
+        "adr": "802",
+        "server": "881402af23f00708",
+        "x": 370,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "6eea74b93aab7103",
+        "type": "ui_template",
+        "z": "3d4971a399ba870f",
+        "group": "542416c8e91eafac",
+        "name": "赤ボタン",
+        "order": 1,
+        "width": 3,
+        "height": 2,
+        "format": "<div class=\"momentary\">\n   <md-button class=\"md-raised md-button md-ink-ripple\" \n   style=\"width:100%; height:54px; background-color:red;\"\n   >ボタン</md-button>\n</div>\n<script>\n(function($scope) {\n$('.momentary').on('touchstart mousedown', function(e) {\n    e.preventDefault();\n    $scope.send({\"payload\": true});\n});\n$('.momentary').on('touchend mouseup', function(e) {\n    e.preventDefault(); \n    $scope.send({\"payload\": false});\n});\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "b27a3937090e38f4"
+            ]
+        ]
+    },
+    {
+        "id": "c24813f1b03f86f2",
+        "type": "ui_template",
+        "z": "3d4971a399ba870f",
+        "group": "542416c8e91eafac",
+        "name": "緑ボタン",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "format": "<div class=\"momentary\">\n   <md-button class=\"md-raised md-button md-ink-ripple\" \n   style=\"width:100%; height:54px; background-color:green;\"\n   >ボタン</md-button>\n</div>\n<script>\n(function($scope) {\n$('.momentary').on('touchstart mousedown', function(e) {\n    e.preventDefault();\n    $scope.send({\"payload\": true});\n});\n$('.momentary').on('touchend mouseup', function(e) {\n    e.preventDefault(); \n    $scope.send({\"payload\": false});\n});\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 580,
+        "wires": [
+            [
+                "6ed922a717ce7771"
+            ]
+        ]
+    },
+    {
+        "id": "9b2acd3f542af049",
+        "type": "ui_text",
+        "z": "3d4971a399ba870f",
+        "group": "563bdc9cacae827f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX100_0",
+        "format": "<font color={{msg.QX100_0} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 60,
+        "wires": []
+    }
+]

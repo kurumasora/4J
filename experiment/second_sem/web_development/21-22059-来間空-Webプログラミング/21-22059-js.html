@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>21-22059-来間空-Web プログラミング-JavaScript</title>
+    </head>
+    <body>
+        <p id = "date">今日の年月日</p>
+        <p id = "time">現在の時刻</p>
+        <p id = "stopwatch">00:00:00</p>
+        <button id = "start_stop">START</button>
+        <script>
+    
+            var now;
+            var start;
+            setInterval(function()
+            {
+                //Dateオブジェクトを取得
+                now = new Date();
+                let today = new Date();
+            
+                let year = today.getFullYear();// 年を取得
+                let month = today.getMonth() + 1;// 月を取得（0から始まるため、1を加える）
+                let day = today.getDate();// 日を取得
+
+                let hour = today.getHours();// 時を取得
+                let minute = today.getMinutes();// 分を取得
+                let second = today.getSeconds();// 秒を取得
+              
+                document.getElementById('date').innerHTML = '今日は' + year +'年' + month +'月'+ day + '日';// 年月日を表示
+                document.getElementById('time').innerHTML = '現在の時刻は' + hour +'時' + minute +'分'+ second + '秒';// 時分秒を表示
+        
+            },10);
+            document.getElementById('start_stop').addEventListener('click',function(){// START/STOPボタンがクリックされたときの処理
+                
+        
+                if(this.innerHTML === 'START'){// STARTボタンが押された場合
+                    start = new Date;
+                    this.innerHTML = 'STOP';
+                    document.getElementById('stopwatch').innerHTML = 'STARTボタンを押してからミリ秒数を計測中';
+
+                   
+                }else if(this.innerHTML === 'STOP'){// STOPボタンが押された場合
+                    
+                    let stop = new Date;
+                    this.innerHTML = 'START';
+                    
+                    let elapsedTime = stop - start;// 経過時間をミリ秒で計算
+
+                    document.getElementById('stopwatch').innerHTML = 'STARTボタンを押してから' + elapsedTime + 'ミリ秒経過';
+
+                    if(elapsedTime >= 4900 && elapsedTime <= 5100){
+                        document.getElementById('stopwatch').innerHTML += '！ほぼ5秒！すごい！';// 4900以上5100以下なら特別メッセージを表示
+                    }
+                    
+                }
+               
+            });
+
+            
+
+            document.addEventListener('keydown', function(){// 任意のキーが押されている間の処理
+                let pressTime = new Date(); // 押された瞬間の時刻を取得
+                
+                // 時、分、秒を取得し、1桁の場合は先頭に0を付けて2桁表示にする
+                let hours = pressTime.getHours();
+                let minutes = pressTime.getMinutes();
+                let seconds = pressTime.getSeconds();
+                
+                
+                document.getElementById('stopwatch').innerHTML = hours + ':' + minutes + ':' + seconds;
+            });
+
+            document.addEventListener('keyup', function(){// 任意のキーが離されたときの処理
+                // stopwatch要素の表示を元に戻す
+                document.getElementById('stopwatch').innerHTML = '00:00:00';
+            });
+
+
+            
+        
+
+        </script>
+    </body>
+</html>
