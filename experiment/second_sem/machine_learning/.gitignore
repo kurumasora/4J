@@ -10,6 +10,6 @@
 !03_pytorch/data/**
 !03_pytorch/outputs/**
 
-**/pyproject.toml
-**/requirements.txt
-**/uv.look
+**/*.toml
+**/*.txt
+**/*.lock
