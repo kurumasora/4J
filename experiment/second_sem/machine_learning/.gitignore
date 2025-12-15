@@ -10,6 +10,18 @@
 !03_pytorch/data/**
 !03_pytorch/outputs/**
 
-**/*.toml
-**/*.txt
-**/*.lock
+00_machine_learning_example/*.toml
+00_machine_learning_example/*.txt
+00_machine_learning_example/*.lock
+01_regression_analysis/*.toml
+01_regression_analysis/*.txt
+01_regression_analysis/*.lock
+
+02_perceptron/*.toml
+02_perceptron/*.txt
+02_perceptron/*.lock
+
+03_pytorch/*.toml
+03_pytorch/*.txt
+03_pytorch/*.lock
+
