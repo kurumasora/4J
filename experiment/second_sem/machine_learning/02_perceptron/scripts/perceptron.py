@@ -168,6 +168,7 @@ def main():
     x = data[:, :-1]
     t = data[:, -1].reshape(-1, 1)
 
+
     # 学習率
     learning_rate = 0.0000001
 
