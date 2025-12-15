@@ -9,3 +9,7 @@
 !03_pytorch/scripts/**
 !03_pytorch/data/**
 !03_pytorch/outputs/**
+
+pyproject.toml
+requirements.txt
+uv.look
