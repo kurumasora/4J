@@ -45,7 +45,7 @@ class NeuealNetworkPredicter(nn.Module):
 
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(3,1)
+        self.fc1 = nn.Linear(3, 1)# [TASK]
 
     def forward(self, x):
         """
@@ -61,7 +61,7 @@ class NeuealNetworkPredicter(nn.Module):
         torch.Tensor
             出力ロジット，形状は (k, 1)
         """
-        x = self.fc1(x)
+        x = self.fc1(x)# [TASK]
         return x
 
 
@@ -84,13 +84,13 @@ def main():
     model = NeuealNetworkPredicter()
 
     # 誤差関数の宣言
-    criterion = nn.MSELoss()
+    criterion = nn.MSELoss()# [TASK]
 
     # 学習率の設定
     learning_rate = 0.00001
 
     # 最適化器の宣言
-    optimizer = optim.SDG(model.parameters(),lr = learning_rate)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate)# [TASK]
 
     # 繰り返し学習する回数
     max_epochs = 300
@@ -103,14 +103,14 @@ def main():
     # モデルの学習
     for epoch in range(max_epochs):
         # 順伝播
-        outputs = model(inputs)
+        outputs = model(inputs)# [TASK]
         # 誤差計算
-        loss = criterion(outputs, targets)
+        loss = criterion(outputs, targets)# [TASK]
 
         # 重みの更新
         optimizer.zero_grad()# [TASK]
         loss.backward()# [TASK]
-        optimizer()# [TASK]
+        optimizer.step()# [TASK]
 
         # 誤差の履歴を保存
         loss_list.append(loss.item())

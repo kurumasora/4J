@@ -79,8 +79,8 @@ class NeuealNetworkCls(nn.Module):
 
     def __init__(self):
         super().__init__()
-        self.flatten = # [TASK]
-        self.fc1 = # [TASK]
+        self.flatten = nn.Flatten()# [TASK]
+        self.fc1 = nn.Linear(784, 10)# [TASK]
 
     def forward(self, x):
         """
@@ -96,8 +96,8 @@ class NeuealNetworkCls(nn.Module):
         torch.Tensor
             出力ロジット，形状は (N, 10)
         """
-        x = # [TASK]
-        x = # [TASK]
+        x = self.flatten(x)# [TASK]
+        x = self.fc1(x)# [TASK]
         return x
 
 
@@ -149,11 +149,15 @@ def main():
     )
 
     # モデルのインスタンスを生成
-    model = # [TASK]
+    model = NeuealNetworkCls()# [TASK]
     # 誤差関数の宣言
-    criterion = # [TASK]
+    criterion = nn.CrossEntropyLoss()# [TASK]
+    
+    # 学習率の設定
+    learning_rate = 0.001
+    
     # 最適化器の宣言
-    optimizer = # [TASK]
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate)# [TASK]
 
     # 各エポックの損失と正答率を保存するリスト
     train_losses = []
@@ -172,14 +176,14 @@ def main():
         # 学習ループ
         for inputs, labels in train_loader:
             # 順伝播
-            outputs = # [TASK]
+            outputs = model(inputs)# [TASK]
             # 誤差計算
-            loss = # [TASK]
+            loss = criterion(outputs, labels)# [TASK]
 
             # 重みの更新
-            # [TASK]
-            # [TASK]
-            # [TASK]
+            optimizer.zero_grad()# [TASK]
+            loss.backward()# [TASK]
+            optimizer.step()# [TASK]
 
             # 誤差を累積
             running_loss += loss.item()
@@ -202,9 +206,9 @@ def main():
         with torch.no_grad():
             for inputs, labels in test_loader:
                 # 順伝播
-                outputs = # [TASK]
+                outputs = model(inputs)# [TASK]
                 # 誤差計算
-                loss = # [TASK]
+                loss = criterion(outputs, labels)# [TASK]
 
                 # 誤差を累積
                 running_test_loss += loss.item()
