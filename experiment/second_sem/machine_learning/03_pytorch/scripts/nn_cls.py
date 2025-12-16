@@ -82,6 +82,7 @@ class NeuealNetworkCls(nn.Module):
         self.flatten = nn.Flatten()# [TASK]
         self.fc1 = nn.Linear(784, 10)# [TASK]
 
+        
     def forward(self, x):
         """
         Forward pass of the classifier
