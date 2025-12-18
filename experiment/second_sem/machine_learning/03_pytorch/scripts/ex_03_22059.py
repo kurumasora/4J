@@ -240,9 +240,10 @@ def main():
         )
 
     # 図の保存
-    plot_losses(train_losses, test_losses, output_dir="../outputs")
-    plot_accuracy(train_accs, test_accs, output_dir="../outputs")
+    plot_losses(train_losses, test_losses, output_dir="../outputs/ex")
+    plot_accuracy(train_accs, test_accs, output_dir="../outputs/ex")
 
+    
 
 if __name__ == "__main__":
     main()
