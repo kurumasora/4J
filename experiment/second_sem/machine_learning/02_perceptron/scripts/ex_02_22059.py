@@ -168,13 +168,12 @@ def main():
     x = data[:, :-1]
     t = data[:, -1].reshape(-1, 1)
 
-
     #[ASSIGNMENT]正規化
     x = x/np.max(x, axis = 0) 
     t = t/np.max(t)
-    
+
     # 学習率
-    learning_rate = 0.01
+    learning_rate = 0.0000001
 
     # 単純パーセプトロンのインスタンスを生成
     perceptron = Perceptron(x.shape[1], 1, learning_rate=learning_rate)
