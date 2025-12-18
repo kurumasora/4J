@@ -152,6 +152,7 @@ class MeanSquaredError():
             逆伝播で入力側に与える勾配情報
         """
 
+        
         # 勾配を計算
         g = 2 * self.diff
         return g
@@ -169,11 +170,11 @@ def main():
     t = data[:, -1].reshape(-1, 1)
 
     #[ASSIGNMENT]正規化
-    x = x/np.max(x, axis = 0)
+    x = x/np.max(x, axis = 0) 
     t = t/np.max(t)
 
     # 学習率
-    learning_rate = 0.01
+    learning_rate = 0.001
 
     # 単純パーセプトロンのインスタンスを生成
     perceptron = Perceptron(x.shape[1], 1, learning_rate=learning_rate)
@@ -220,7 +221,7 @@ def main():
     plt.ylabel("Predicted Sales")
     plt.plot([y.min(), y.max()], [y.min(), y.max()], 'r--')
     plt.tight_layout()
-    plt.savefig('../outputs/advertising_actual_vs_predicted.png')
+    plt.savefig('../outputs/ex_advertising_actual_vs_predicted.png')
 
     # 誤差の履歴をプロット
     plt.figure()
@@ -228,7 +229,7 @@ def main():
     plt.xlabel("Iteration")
     plt.ylabel("Mean Squared Error Loss")
     plt.tight_layout()
-    plt.savefig('../outputs/advertising_loss_history.png')
+    plt.savefig('../outputs/ex_advertising_loss_history.png')
     
 
 if __name__ == "__main__":
