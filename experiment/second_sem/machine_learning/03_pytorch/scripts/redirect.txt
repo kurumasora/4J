@@ -1,0 +1,25 @@
+#nn_cls
+Epoch [1/10] Train Loss: 2.1044 Train Acc: 43.30% Test Loss: 1.8946 Test Acc: 65.59%
+Epoch [2/10] Train Loss: 1.7443 Train Acc: 70.79% Test Loss: 1.5901 Test Acc: 75.28%
+Epoch [3/10] Train Loss: 1.4925 Train Acc: 75.76% Test Loss: 1.3743 Test Acc: 79.10%
+Epoch [4/10] Train Loss: 1.3122 Train Acc: 78.46% Test Loss: 1.2182 Test Acc: 80.81%
+Epoch [5/10] Train Loss: 1.1798 Train Acc: 80.00% Test Loss: 1.1020 Test Acc: 82.07%
+Epoch [6/10] Train Loss: 1.0797 Train Acc: 81.19% Test Loss: 1.0131 Test Acc: 82.77%
+Epoch [7/10] Train Loss: 1.0019 Train Acc: 81.92% Test Loss: 0.9429 Test Acc: 83.29%
+Epoch [8/10] Train Loss: 0.9395 Train Acc: 82.61% Test Loss: 0.8863 Test Acc: 83.74%
+Epoch [9/10] Train Loss: 0.8887 Train Acc: 83.06% Test Loss: 0.8397 Test Acc: 84.23%
+Epoch [10/10] Train Loss: 0.8464 Train Acc: 83.49% Test Loss: 0.8007 Test Acc: 84.64%
+Saved loss figure to ../outputs/mnist_loss.png
+
+#ex
+Epoch [1/10] Train Loss: 2.2711 Train Acc: 20.58% Test Loss: 2.2288 Test Acc: 37.37%
+Epoch [2/10] Train Loss: 2.1878 Train Acc: 44.69% Test Loss: 2.1347 Test Acc: 52.21%
+Epoch [3/10] Train Loss: 2.0858 Train Acc: 56.70% Test Loss: 2.0189 Test Acc: 63.09%
+Epoch [4/10] Train Loss: 1.9620 Train Acc: 65.82% Test Loss: 1.8820 Test Acc: 70.14%
+Epoch [5/10] Train Loss: 1.8196 Train Acc: 70.84% Test Loss: 1.7293 Test Acc: 72.99%
+Epoch [6/10] Train Loss: 1.6654 Train Acc: 73.07% Test Loss: 1.5694 Test Acc: 75.00%
+Epoch [7/10] Train Loss: 1.5092 Train Acc: 74.58% Test Loss: 1.4135 Test Acc: 76.37%
+Epoch [8/10] Train Loss: 1.3619 Train Acc: 75.94% Test Loss: 1.2717 Test Acc: 77.76%
+Epoch [9/10] Train Loss: 1.2309 Train Acc: 77.42% Test Loss: 1.1487 Test Acc: 79.00%
+Epoch [10/10] Train Loss: 1.1187 Train Acc: 78.82% Test Loss: 1.0450 Test Acc: 80.21%
+Saved loss figure to ../outputs/ex/mnist_loss.png
