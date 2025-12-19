@@ -32,7 +32,7 @@ def plot_losses(train_losses, test_losses, output_dir="../outputs"):
     plt.ylabel("Loss")
     plt.legend()
 
-    out_path = os.path.join(output_dir, "epochs=200_mnist_loss.png")
+    out_path = os.path.join(output_dir, "epochs=50_mnist_loss.png")
     plt.savefig(out_path)
     plt.close()
 
@@ -62,7 +62,7 @@ def plot_accuracy(train_accs, test_accs, output_dir="../outputs"):
     plt.ylabel("Accuracy (%)")
     plt.legend()
 
-    out_path = os.path.join(output_dir, "epochs=200_mnist_accuracy.png")
+    out_path = os.path.join(output_dir, "epochs=50_mnist_accuracy.png")
     plt.savefig(out_path)
     plt.close()
 
@@ -148,7 +148,7 @@ def main():
     """
 
     batch_size = 128
-    max_epochs = 200
+    max_epochs = 50
 
     train_loader, test_loader = load_mnist_dataloaders(
         batch_size=batch_size,
@@ -160,7 +160,7 @@ def main():
     criterion = nn.CrossEntropyLoss()# [TASK]
     
     # 学習率の設定
-    learning_rate = 0.001
+    learning_rate = 0.1
     
     # 最適化器の宣言
     optimizer = optim.SGD(model.parameters(), lr=learning_rate)# [TASK]
