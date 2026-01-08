@@ -2,8 +2,8 @@
 
 work/
 
-comp_arc.cr.mti
-comp_arc.mpf
+/comp_arc.cr.mti
+/comp_arc.mpf
 
-transcript
-vsim.wlf
+/transcript
+/vsim.wlf
