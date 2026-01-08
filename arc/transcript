@@ -1,0 +1,22 @@
+# Compile of And_Sample2.vhd was successful.
+# Compile of tb_And_Sample2.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of And_Sample2.vhd was successful.
+# Compile of tb_And_Sample2.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_and_sample2
+# vsim work.tb_and_sample2 
+# Start time: 09:24:32 on Jan 08,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_and_sample2(io)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.and_sample2(rtl)
+add wave -position insertpoint sim:/tb_and_sample2/SIM/*
+add wave -r sim:/tb_and_sample2/SIM/*
+run -all
+quit -sim
+# End time: 09:29:35 on Jan 08,2026, Elapsed time: 0:05:03
+# Errors: 0, Warnings: 7
