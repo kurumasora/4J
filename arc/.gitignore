@@ -1,6 +1,9 @@
 *.png
-work
+
+work/
+
 comp_arc.cr.mti
 comp_arc.mpf
+
 transcript
 vsim.wlf
