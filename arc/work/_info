@@ -20,19 +20,19 @@ Z5 dC:/Users/skuru/4J/arc
 Z6 8C:/Users/skuru/4J/arc/1/And_Sample2.vhd
 Z7 FC:/Users/skuru/4J/arc/1/And_Sample2.vhd
 l0
-L15 1
+Z8 L15 1
 V`hNOBI:N:Jg_QL]DofKHf2
 !s100 PY6oUgE`jIHoZX4TX7`IB0
-Z8 OV;C;2020.1;71
+Z9 OV;C;2020.1;71
 32
-Z9 !s110 1767831786
+Z10 !s110 1767831786
 !i10b 1
-Z10 !s108 1767831786.000000
-Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/And_Sample2.vhd|
-Z12 !s107 C:/Users/skuru/4J/arc/1/And_Sample2.vhd|
+Z11 !s108 1767831786.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/And_Sample2.vhd|
+Z13 !s107 C:/Users/skuru/4J/arc/1/And_Sample2.vhd|
 !i113 1
-Z13 o-work work -2002 -explicit
-Z14 tExplicit 1 CvgOpt 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
 Artl
 R1
 R2
@@ -44,54 +44,140 @@ l28
 L26 22
 VXWVEhnc=fE7_2E@JR46;a1
 !s100 eJf?SF<_dG60X<ULOe3:L3
-R8
-32
 R9
-!i10b 1
+32
 R10
+!i10b 1
 R11
 R12
-!i113 1
 R13
+!i113 1
 R14
+R15
+Eexor_ex
+Z16 w1767832565
+R1
+R2
+R3
+R4
+!i122 4
+R5
+Z17 8C:/Users/skuru/4J/arc/1/Exor_Ex.vhd
+Z18 FC:/Users/skuru/4J/arc/1/Exor_Ex.vhd
+l0
+R8
+VkW;aa<KEA2Dl934HlQ@Gk1
+!s100 L=`bT9lA[W?9E;]b5RDFY2
+R9
+32
+Z19 !s110 1767833928
+!i10b 1
+Z20 !s108 1767833927.000000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/Exor_Ex.vhd|
+Z22 !s107 C:/Users/skuru/4J/arc/1/Exor_Ex.vhd|
+!i113 1
+R14
+R15
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 7 exor_ex 0 22 kW;aa<KEA2Dl934HlQ@Gk1
+!i122 4
+l30
+L26 15
+VgfLQ6FP:9<JkiA>J2oecC0
+!s100 H1^Oj?f:za8Nd=M_LoWIN3
+R9
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R14
+R15
 Etb_and_sample2
-Z15 w1765759376
+Z23 w1765759376
 R3
 R4
 !i122 3
 R5
-Z16 8C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd
-Z17 FC:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd
+Z24 8C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd
+Z25 FC:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd
 l0
-L12 1
+Z26 L12 1
 VDc0G=;RDi;ZdH9BcUkeeb2
 !s100 flcR6JzPh@cmifleK57g;0
-R8
-32
 R9
-!i10b 1
+32
 R10
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd|
-Z19 !s107 C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd|
+!i10b 1
+R11
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd|
+Z28 !s107 C:/Users/skuru/4J/arc/1/tb_And_Sample2.vhd|
 !i113 1
-R13
 R14
+R15
 Aio
 R3
 R4
-Z20 DEx4 work 14 tb_and_sample2 0 22 Dc0G=;RDi;ZdH9BcUkeeb2
+DEx4 work 14 tb_and_sample2 0 22 Dc0G=;RDi;ZdH9BcUkeeb2
 !i122 3
 l30
-Z21 L15 57
-Z22 V;;HCFIM6n=m2LE`H?EA^Q0
-Z23 !s100 _RoT6a17PZDn7AJ1N4J?72
-R8
-32
+Z29 L15 57
+V;;HCFIM6n=m2LE`H?EA^Q0
+!s100 _RoT6a17PZDn7AJ1N4J?72
 R9
-!i10b 1
+32
 R10
-R18
-R19
+!i10b 1
+R11
+R27
+R28
 !i113 1
-R13
 R14
+R15
+Etb_exor_ex
+Z30 w1766363921
+R3
+R4
+!i122 5
+R5
+Z31 8C:/Users/skuru/4J/arc/1/tb_Exor_Ex.vhd
+Z32 FC:/Users/skuru/4J/arc/1/tb_Exor_Ex.vhd
+l0
+R26
+VTf^]cDYZTPzYS:NnH>9jW0
+!s100 n39k1ahczfcco4^RzND:;0
+R9
+32
+R19
+!i10b 1
+Z33 !s108 1767833928.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/1/tb_Exor_Ex.vhd|
+!s107 C:/Users/skuru/4J/arc/1/tb_Exor_Ex.vhd|
+!i113 1
+R14
+R15
+Aio
+R3
+R4
+DEx4 work 10 tb_exor_ex 0 22 Tf^]cDYZTPzYS:NnH>9jW0
+!i122 5
+l30
+R29
+VEzLjNzR]g?iA6QWELUdgC0
+!s100 YQZj2mU3L>A6_K2LAU1MQ0
+R9
+32
+R19
+!i10b 1
+R33
+R34
+Z35 !s107 C:/Users/skuru/4J/arc/1/tb_Exor_Ex.vhd|
+!i113 1
+R14
+R15

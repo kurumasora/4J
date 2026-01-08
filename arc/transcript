@@ -20,3 +20,18 @@ run -all
 quit -sim
 # End time: 09:29:35 on Jan 08,2026, Elapsed time: 0:05:03
 # Errors: 0, Warnings: 7
+# Compile of Exor_Ex.vhd was successful.
+# Compile of tb_Exor_Ex.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_exor_ex
+# vsim work.tb_exor_ex 
+# Start time: 10:01:04 on Jan 08,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_exor_ex(io)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.exor_ex(rtl)
+add wave -position insertpoint sim:/tb_exor_ex/SIM/*
+run -all
