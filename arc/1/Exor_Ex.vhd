@@ -27,17 +27,14 @@ architecture RTL of Exor_Ex is
 
 
 
-
-
 begin
-	LOGICAL_XOR : process(A, B)
-	begin
-		if ((A = '1') xor (B = '1')) then
-			Y <= '1';
-		else
-			Y <= '0';
-		end if;
-
-	end process LOGICAL_XOR;
+    LOGICAL_XOR : process(A, B)
+    begin
+        if (A /= B) then 
+            Y <= '1';
+        else
+            Y <= '0';
+        end if;
+    end process LOGICAL_XOR;
 
 end RTL;
