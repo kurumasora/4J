@@ -1,0 +1,183 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Elogical_01
+Z0 w1768203670
+Z1 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z5 dC:/Users/skuru/4J/arc/2
+Z6 8C:/Users/skuru/4J/arc/2/samples/Logical_01.vhd
+Z7 FC:/Users/skuru/4J/arc/2/samples/Logical_01.vhd
+l0
+Z8 L15 1
+VK@2;D1QYM[feRYS8Xcl[M3
+!s100 C9Ped83h<Kfi1BoY1[jP83
+Z9 OV;C;2020.1;71
+32
+Z10 !s110 1768223371
+!i10b 1
+Z11 !s108 1768223371.000000
+Z12 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/Logical_01.vhd|
+Z13 !s107 C:/Users/skuru/4J/arc/2/samples/Logical_01.vhd|
+!i113 1
+Z14 o-work 2_work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 10 logical_01 0 22 K@2;D1QYM[feRYS8Xcl[M3
+!i122 0
+l27
+L25 21
+Vm;OdAZ_^cnLbWFeoG5z?Q2
+!s100 hBHnQMi>n;1k104Ed`^;U2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Epattern_8_slv
+Z16 w1768201569
+R1
+R2
+R3
+R4
+!i122 1
+R5
+Z17 8C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
+Z18 FC:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
+l0
+R8
+V80>ik0VNDM7EcbbgkJG?e2
+!s100 SYNkmP=BBn]`EOe@?D<1W1
+R9
+32
+R10
+!i10b 1
+R11
+Z19 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
+Z20 !s107 C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
+!i113 1
+R14
+R15
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 13 pattern_8_slv 0 22 80>ik0VNDM7EcbbgkJG?e2
+!i122 1
+l31
+L25 13
+V=F40n8hVIVjL?o6behHJF3
+!s100 _=gBmF`SL1f64k`mfB7zG0
+R9
+32
+R10
+!i10b 1
+R11
+R19
+R20
+!i113 1
+R14
+R15
+Etb_logical_01
+Z21 w1768203671
+R3
+R4
+!i122 2
+R5
+Z22 8C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
+Z23 FC:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
+l0
+Z24 L12 1
+VFcP0iZQjoFo]jlT@8K;mM0
+!s100 EJDd^RFSDRL7FjAFdJ[Um3
+R9
+32
+Z25 !s110 1768223372
+!i10b 1
+R11
+Z26 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
+Z27 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
+!i113 1
+R14
+R15
+Aio
+R3
+R4
+DEx4 work 13 tb_logical_01 0 22 FcP0iZQjoFo]jlT@8K;mM0
+!i122 2
+l28
+L15 40
+VjhZma[zniAm:]<]aj9RQ;3
+!s100 H5l[AOAB>35VRfBUMT9>U1
+R9
+32
+R25
+!i10b 1
+R11
+R26
+R27
+!i113 1
+R14
+R15
+Etb_pattern_8_slv
+Z28 w1768201570
+R3
+R4
+!i122 3
+R5
+Z29 8C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
+Z30 FC:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
+l0
+R24
+V8:[2idd[4YDGkC^T_NiR61
+!s100 bn>0Mjek7:3T6[ijcKn>Z0
+R9
+32
+R25
+!i10b 1
+Z31 !s108 1768223372.000000
+Z32 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!s107 C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!i113 1
+R14
+R15
+Aio
+R3
+R4
+DEx4 work 16 tb_pattern_8_slv 0 22 8:[2idd[4YDGkC^T_NiR61
+!i122 3
+l28
+L15 52
+VH0?M3M^Zh_m6f@3JTDm573
+!s100 Rf>W`c07WG1CA^f>A1MVW0
+R9
+32
+R25
+!i10b 1
+R31
+R32
+Z33 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!i113 1
+R14
+R15
