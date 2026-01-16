@@ -41,7 +41,7 @@ R4
 DEx4 work 10 logical_01 0 22 K@2;D1QYM[feRYS8Xcl[M3
 !i122 68
 l27
-L25 21
+Z16 L25 21
 Vm;OdAZ_^cnLbWFeoG5z?Q2
 !s100 hBHnQMi>n;1k104Ed`^;U2
 R9
@@ -54,27 +54,72 @@ R13
 !i113 1
 R14
 R15
+Epattern_10_slv
+Z17 w1768546948
+R1
+R2
+R3
+R4
+!i122 79
+R5
+Z18 8C:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd
+Z19 FC:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd
+l0
+R8
+V^`3JzD5VXb`o7EjEza;HA2
+!s100 oj3]HWhK7cUfblhLdc;WB2
+R9
+32
+Z20 !s110 1768547021
+!i10b 1
+Z21 !s108 1768547021.000000
+Z22 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd|
+Z23 !s107 C:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd|
+!i113 1
+R14
+R15
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 14 pattern_10_slv 0 22 ^`3JzD5VXb`o7EjEza;HA2
+!i122 79
+l27
+R16
+V^C`1MT;5aR6S@LbQP63TN0
+!s100 R@;Pb@^S0PP=Q<16=@dHc1
+R9
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R14
+R15
 Epattern_8_slv
-Z16 w1768294393
+Z24 w1768294393
 R1
 R2
 R3
 R4
 !i122 75
 R5
-Z17 8C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
-Z18 FC:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
+Z25 8C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
+Z26 FC:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
 l0
 R8
 ViFS=jB2l:UD>6`gohAigH0
 !s100 U=1Z42EzK0>=B_MDIS3:_0
 R9
 32
-Z19 !s110 1768294460
+Z27 !s110 1768294460
 !i10b 1
-Z20 !s108 1768294460.000000
-Z21 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
-Z22 !s107 C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
+Z28 !s108 1768294460.000000
+Z29 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
+Z30 !s107 C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd|
 !i113 1
 R14
 R15
@@ -91,33 +136,33 @@ V^XXfSJ2]SJ^;6i2cjA<hF1
 !s100 1=5WbfYBOFjJ1TUL><kjS3
 R9
 32
-R19
+R27
 !i10b 1
-R20
-R21
-R22
+R28
+R29
+R30
 !i113 1
 R14
 R15
 Etb_logical_01
-Z23 w1768203671
+Z31 w1768203671
 R3
 R4
 !i122 70
 R5
-Z24 8C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
-Z25 FC:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
+Z32 8C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
+Z33 FC:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd
 l0
-Z26 L12 1
+Z34 L12 1
 VFcP0iZQjoFo]jlT@8K;mM0
 !s100 EJDd^RFSDRL7FjAFdJ[Um3
 R9
 32
-Z27 !s110 1768294050
+Z35 !s110 1768294050
 !i10b 1
 R11
-Z28 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
-Z29 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
+Z36 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
+Z37 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Logical_01.vhd|
 !i113 1
 R14
 R15
@@ -132,52 +177,93 @@ VjhZma[zniAm:]<]aj9RQ;3
 !s100 H5l[AOAB>35VRfBUMT9>U1
 R9
 32
-R27
+R35
 !i10b 1
 R11
-R28
-R29
+R36
+R37
 !i113 1
 R14
 R15
-Etb_pattern_8_slv
-Z30 w1768294354
+Etb_pattern_10_slv
+Z38 w1768546939
 R3
 R4
-!i122 76
+!i122 80
 R5
-Z31 8C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
-Z32 FC:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
+Z39 8C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd
+Z40 FC:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd
 l0
-R26
-V8:[2idd[4YDGkC^T_NiR61
-!s100 bn>0Mjek7:3T6[ijcKn>Z0
+R34
+VPARmmYa0Q>2Q`XNHnG:602
+!s100 CZna[gY=IZER:GT21j<3G2
 R9
 32
-R19
-!i10b 1
 R20
-Z33 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
-!s107 C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!i10b 1
+R21
+Z41 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd|
+!s107 C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd|
 !i113 1
 R14
 R15
 Aio
 R3
 R4
-Z34 DEx4 work 16 tb_pattern_8_slv 0 22 8:[2idd[4YDGkC^T_NiR61
-!i122 76
+DEx4 work 17 tb_pattern_10_slv 0 22 PARmmYa0Q>2Q`XNHnG:602
+!i122 80
 l28
-Z35 L15 69
-Z36 VTbR18QnImC6:EGPUKNG8B1
-Z37 !s100 >Onz5KMOK9i_k?RQ0H_Q[2
+L15 56
+VDX>@L2bX?X>=4HGf54`Do0
+!s100 ?o<@=kW@`<XYA@59NFT>23
 R9
 32
-R19
-!i10b 1
 R20
-R33
-Z38 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!i10b 1
+R21
+R41
+Z42 !s107 C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd|
+!i113 1
+R14
+R15
+Etb_pattern_8_slv
+Z43 w1768545879
+R3
+R4
+!i122 78
+R5
+Z44 8C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
+Z45 FC:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
+l0
+R34
+V8:[2idd[4YDGkC^T_NiR61
+!s100 bn>0Mjek7:3T6[ijcKn>Z0
+R9
+32
+Z46 !s110 1768545890
+!i10b 1
+Z47 !s108 1768545890.000000
+Z48 !s90 -reportprogress|300|-work|2_work|-2002|-explicit|-stats=none|C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+Z49 !s107 C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd|
+!i113 1
+R14
+R15
+Aio
+R3
+R4
+DEx4 work 16 tb_pattern_8_slv 0 22 8:[2idd[4YDGkC^T_NiR61
+!i122 78
+l28
+L15 58
+Ve^4g?]k7n@S28d5`TzQR`1
+!s100 h>h4Y;N?mlEhk^zR?8_ZM0
+R9
+32
+R46
+!i10b 1
+R47
+R48
+R49
 !i113 1
 R14
 R15

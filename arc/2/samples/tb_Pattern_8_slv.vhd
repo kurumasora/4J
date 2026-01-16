@@ -62,18 +62,7 @@ begin
 			wait for 50 ns;
 			sw <= "1001";
 			wait for 50 ns;
-			sw <= "1010";
-			wait for 50 ns;
-			sw <= "1011";
-			wait for 50 ns;
-			sw <= "1100";
-			wait for 50 ns;
-			sw <= "1101";
-			wait for 50 ns;
-			sw <= "1110";
-			wait for 50 ns;
-			sw <= "1111";
-			wait for 50 ns;
+			
 
 		else
 			wait;

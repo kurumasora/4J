@@ -9,12 +9,12 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity tb_Pattern_8_slv is
-end tb_Pattern_8_slv;
+entity tb_Pattern_10_slv is
+end tb_Pattern_10_slv;
 
-architecture IO of tb_Pattern_8_slv is
+architecture IO of tb_Pattern_10_slv is
 
-	component Pattern_8_slv
+	component Pattern_10_slv
 	port (
 		SW : in std_logic_vector(3 downto 0);
 		SEG7 : out std_logic_vector(6 downto 0)
@@ -27,7 +27,7 @@ architecture IO of tb_Pattern_8_slv is
 
 begin
 
-	SIM : Pattern_8_slv port map (
+	SIM : Pattern_10_slv port map (
 		SW => sw,
 		SEG7 => seg
 	);
@@ -62,19 +62,6 @@ begin
 			wait for 50 ns;
 			sw <= "1001";
 			wait for 50 ns;
-			sw <= "1010";
-			wait for 50 ns;
-			sw <= "1011";
-			wait for 50 ns;
-			sw <= "1100";
-			wait for 50 ns;
-			sw <= "1101";
-			wait for 50 ns;
-			sw <= "1110";
-			wait for 50 ns;
-			sw <= "1111";
-			wait for 50 ns;
-
 		else
 			wait;
 		end if;
