@@ -1,10 +1,10 @@
 *.png
 
-work/
+*work/
 
 
-comp_arc.cr.mti
-comp_arc.mpf
+*.cr.mti
+*.mpf
 
 transcript
-vsim.wlf
+*.wlf
