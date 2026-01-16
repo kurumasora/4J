@@ -16,6 +16,16 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity tb_Logical_01
 -- Compiling architecture IO of tb_Logical_01
 
+} {} {}} C:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd {1 {vcom -work 2_work -2002 -explicit -stats=none C:/Users/skuru/4J/arc/2/assignments/Pattern_10_slv.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity Pattern_10_slv
+-- Compiling architecture RTL of Pattern_10_slv
+
 } {} {}} C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd {1 {vcom -work 2_work -2002 -explicit -stats=none C:/Users/skuru/4J/arc/2/samples/Pattern_8_slv.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -25,6 +35,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package STD_LOGIC_SIGNED
 -- Compiling entity Pattern_8_slv
 -- Compiling architecture RTL of Pattern_8_slv
+
+} {} {}} C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd {1 {vcom -work 2_work -2002 -explicit -stats=none C:/Users/skuru/4J/arc/2/assignments/tb_Pattern_10_slv.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_Pattern_10_slv
+-- Compiling architecture IO of tb_Pattern_10_slv
 
 } {} {}} C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd {1 {vcom -work 2_work -2002 -explicit -stats=none C:/Users/skuru/4J/arc/2/samples/tb_Pattern_8_slv.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
