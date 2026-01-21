@@ -1,0 +1,11 @@
+*.png
+*.pdf
+
+*work/
+
+
+*.cr.mti
+*.mpf
+
+transcript
+*.wlf
