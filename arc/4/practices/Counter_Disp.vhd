@@ -44,8 +44,15 @@ architecture STRUCTURE of Counter_Disp is
 
 begin
 
+	CNT3 : Counter_3bit port map (
+		CLK => CLK,
+		RST => RST,
+		CNT => cnt_data
+	);
 
-
-
+	P8 : Pattern_8 port map (
+		DATA => cnt_data,
+		SEG7 => SEG7
+	);
 
 end STRUCTURE;

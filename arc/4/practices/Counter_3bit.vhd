@@ -25,7 +25,7 @@ end Counter_3bit;
 
 architecture RTL of Counter_3bit is
 
-	signal cnt_reg : integer range 0 to 3;
+	signal cnt_reg : integer range 0 to 7;
 
 begin
 
@@ -38,7 +38,7 @@ begin
 
 		elsif (CLK'event and CLK = '1') then
 
-			if (cnt_reg = 3) then
+			if (cnt_reg = 7) then
 				cnt_reg <= 0; -- rotation
 			else
 				cnt_reg <= cnt_reg + 1; -- count
