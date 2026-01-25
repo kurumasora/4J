@@ -56,7 +56,7 @@ write_csv(tests, file.path(out_dir, "tests_guiraud.csv"))
 p <- ggplot(song_guiraud, aes(x = GroupDir, y = guiraud)) +
   geom_boxplot() +
   theme_bw(base_size = 12) +
-  labs(x = "Group（old/new）", y = "Guiraud Index（V/sqrt(N)）")
+  labs(x = "Group（old/new）", y = "Guiraud Index")
 ggsave(file.path(out_dir, "plots", "box_guiraud.png"), p, width = 6, height = 4, dpi = 200)
 
 message("分析2完了：", normalizePath(out_dir))

@@ -54,6 +54,25 @@ group_summary <- song_bccwj %>%
 # グループ別統計
 write_csv(group_summary, file.path(out_dir, "group_bccwj_summary.csv"))
 
+# バープロット：感情スコア（mean_rank_w, basic_rt, unmatched_rt）のグループ別比較
+p1 <- ggplot(song_bccwj, aes(x = GroupDir, y = mean_rank_w, fill = GroupDir)) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge") +
+  theme_bw(base_size = 12) +
+  labs(x = "Group（old/new）", y = "平均ランク（頻度加重，低いほど一般的）", title = "グループ別平均BCCWJランク")
+ggsave(file.path(out_dir, "plots", "bar_mean_rank_w.png"), p1, width = 6, height = 4, dpi = 200)
+
+p2 <- ggplot(song_bccwj, aes(x = GroupDir, y = basic_rt, fill = GroupDir)) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge") +
+  theme_bw(base_size = 12) +
+  labs(x = "Group（old/new）", y = paste0("基本語彙率（rank≤", basic_rank_threshold, "）"), title = "グループ別基本語彙率")
+ggsave(file.path(out_dir, "plots", "bar_basic_rt.png"), p2, width = 6, height = 4, dpi = 200)
+
+p3 <- ggplot(song_bccwj, aes(x = GroupDir, y = unmatched_rt, fill = GroupDir)) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge") +
+  theme_bw(base_size = 12) +
+  labs(x = "Group（old/new）", y = "未一致率（辞書外率の目安）", title = "グループ別未一致率")
+ggsave(file.path(out_dir, "plots", "bar_unmatched_rt.png"), p3, width = 6, height = 4, dpi = 200)
+
 # 検定
 run_tests <- function(df, col) {
   x <- df %>% select(GroupDir, value = all_of(col)) %>% filter(!is.na(value))
@@ -71,24 +90,5 @@ tests <- bind_rows(
 
 # 検定結果
 write_csv(tests, file.path(out_dir, "tests_bccwj.csv"))
-
-# 可視化（箱ひげ）
-p1 <- ggplot(song_bccwj, aes(x = GroupDir, y = mean_rank_w)) +
-  geom_boxplot() +
-  theme_bw(base_size = 12) +
-  labs(x = "Group（old/new）", y = "BCCWJ 平均ランク（頻度加重，低いほど一般的）")
-ggsave(file.path(out_dir, "plots", "box_mean_rank_w.png"), p1, width = 6, height = 4, dpi = 200)
-
-p2 <- ggplot(song_bccwj, aes(x = GroupDir, y = basic_rt)) +
-  geom_boxplot() +
-  theme_bw(base_size = 12) +
-  labs(x = "Group（old/new）", y = paste0("基本語彙率（rank≤", basic_rank_threshold, "）"))
-ggsave(file.path(out_dir, "plots", "box_basic_rt.png"), p2, width = 6, height = 4, dpi = 200)
-
-p3 <- ggplot(song_bccwj, aes(x = GroupDir, y = unmatched_rt)) +
-  geom_boxplot() +
-  theme_bw(base_size = 12) +
-  labs(x = "Group（old/new）", y = "BCCWJ未一致率（辞書外率の目安）")
-ggsave(file.path(out_dir, "plots", "box_unmatched_rt.png"), p3, width = 6, height = 4, dpi = 200)
 
 message("分析1完了：", normalizePath(out_dir))
