@@ -26,6 +26,38 @@ end UDcnt_Disp;
 
 architecture STRUCTURE of UDcnt_Disp is
 
+	component UDCounter
+	port(
+		CLK : in std_logic;
+		RST : in std_logic;
+		UDS : in std_logic;
+		CNT : out integer range 0 to 15
+	);
+	end component;
+
+	component Pattern_10
+	port(
+		DATA : in integer range 0 to 9;
+		SEG7 : out std_logic_vector(6 downto 0)
+	);
+	end component;
+
+	signal cnt_reg : integer range 0 to 15;
+
+begin
+
+	CNT9 : UDCounter port map(
+		CLK => CLK,
+		RST => RST,
+		UDS => UDS,
+		CNT => cnt_reg
+
+	);
+
+	p10 : Pattern_10 port map(
+		DATA => cnt_reg,
+		SEG7 => SEG7
+	);
 
 
 

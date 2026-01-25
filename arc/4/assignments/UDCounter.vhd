@@ -26,8 +26,40 @@ end UDCounter;
 
 architecture RTL of UDCounter is
 
+	signal cnt_reg :  integer range 0 to 15;
 
+begin
 
+	COUNT10 : process(CLK, RST)
 
+	begin
+		if(RST = '1')then
+			cnt_reg <= 0;
+		elsif(CLK'event and CLK = '1')then
+			
+			if(UDS = '0')then
+				if(cnt_reg = 9)then
+					cnt_reg <= 0;
+				else
+					cnt_reg <= cnt_reg + 1;
+				end if;
+			
 
+			else
+				if(cnt_reg = 0)then
+					cnt_reg <= 9;
+				else
+					cnt_reg <= cnt_reg - 1;
+				end if;
+			end if;
+
+		end if;
+
+		
+
+	end process;
+
+	CNT <= cnt_reg;
+
+	
 end RTL;
