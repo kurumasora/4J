@@ -1,0 +1,13 @@
+{
+  "[vhdl]": {
+    "editor.suggest.preview": false,
+    "editor.inlineSuggest.enabled": false,
+
+    "editor.snippetSuggestions": "none",
+    "editor.tabCompletion": "off",
+
+    
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": "off"
+  }
+}
