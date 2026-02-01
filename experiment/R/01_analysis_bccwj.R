@@ -92,3 +92,4 @@ tests <- bind_rows(
 write_csv(tests, file.path(out_dir, "tests_bccwj.csv"))
 
 message("分析1完了：", normalizePath(out_dir))
+1
