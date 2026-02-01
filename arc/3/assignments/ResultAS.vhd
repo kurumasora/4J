@@ -30,7 +30,7 @@ begin
 	begin
 		case DAT is
 			when -3		=>  MS7 <= "00000110"; --"mabcdefg"
-			when -2		=>  MS7 <= "01011011";
+			when -2		=>  MS7 <= "00010010";
 			when -1		=>  MS7 <= "01001111";
 			when 0 		=> 	MS7 <= "10000001";
 			when 1 		=> 	MS7 <= "11001111";

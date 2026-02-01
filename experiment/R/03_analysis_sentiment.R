@@ -1,8 +1,5 @@
 # ============================================================
-# 03_analysis_sentiment.R
-# 分析3：感情極性（頻度加重平均，分散，ポジ率，ネガ率）
-# クラスタ分析：感情スコアに基づいたグループ分け
-# 出力：outputs/3/
+# 03_analysis_sentiment.R 修正（多対多の関係を解消する方法）
 # ============================================================
 
 suppressPackageStartupMessages({
@@ -12,8 +9,6 @@ suppressPackageStartupMessages({
   library(data.table)
   library(ggplot2)
   library(httr)   # URLから直接ファイルを取得するためのライブラリ
-  library(cluster) # クラスタリング用パッケージ
-  library(factoextra) # クラスタリング結果の可視化
 })
 
 # 出力先フォルダ（分析3）
@@ -59,6 +54,11 @@ word_polarity_dict <- word_polarity_dict %>%
     score = as.numeric(score)  # スコアを数値に変換
   )
 
+# 重複した単語に対するスコアを平均化（多対多の関係を解消）
+word_polarity_dict <- word_polarity_dict %>%
+  group_by(word) %>%
+  summarise(score = mean(score, na.rm = TRUE), .groups = "drop")
+
 # ---- 3. 辞書と歌詞データを結びつける ----
 df_ranked <- df_ranked %>%
   left_join(word_polarity_dict, by = c("Term" = "word"))
@@ -101,22 +101,14 @@ tests <- bind_rows(
 )
 write_csv(tests, file.path(out_dir, "tests_sentiment.csv"))
 
-# ---- 7. クラスタリング：K-meansクラスタリング ----
-# 感情スコアに基づいてクラスタリングを実行
-set.seed(123)  # 再現性を確保
-kmeans_result <- kmeans(song_sentiment_avg[, c("senti_mean_mean", "senti_mean_sd")], centers = 3)
-
-# クラスタリング結果を元のデータに追加
-song_sentiment_avg$cluster <- as.factor(kmeans_result$cluster)
-
-# クラスタリング結果の可視化
-p1 <- ggplot(song_sentiment_avg, aes(x = senti_mean_mean, y = senti_mean_sd, color = cluster)) +
+# ---- 7. 散布図（感情スコア vs. 他の指標） ----
+# 散布図：感情スコア（y）とグループ別平均感情スコア（x）の関係
+p1 <- ggplot(song_sentiment_avg, aes(x = senti_mean_mean, y = senti_mean_sd, color = GroupDir)) +
   geom_point(alpha = 0.7) +
   theme_bw(base_size = 12) +
-  labs(x = "グループ別平均感情スコア", y = "感情スコアの標準偏差", title = "感情スコアによるクラスタリング") +
-  scale_color_manual(values = c("red", "green", "blue"))
+  labs(x = "グループ別平均感情スコア", y = "感情スコアの標準偏差", title = "グループ別感情スコアの平均と標準偏差")
 
 # 散布図を保存
-ggsave(file.path(out_dir, "plots", "scatter_kmeans_cluster.png"), p1, width = 6, height = 4, dpi = 200)
+ggsave(file.path(out_dir, "plots", "scatter_senti_mean_avg.png"), p1, width = 6, height = 4, dpi = 200)
 
 message("分析3完了：", normalizePath(out_dir))

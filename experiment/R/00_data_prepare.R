@@ -24,7 +24,8 @@ out_dir_common <- "outputs/common"
 dir.create(out_dir_common, showWarnings = FALSE, recursive = TRUE)
 
 # ---- 歌詞リスト読込 ----
-lyrics_list <- read_csv_safe(lyrics_list_path)
+# readrパッケージのread_csvを使用します
+lyrics_list <- read_csv(lyrics_list_path, show_col_types = FALSE)
 
 # --- BCCWJ頻度表の読込 ----
 if (!file.exists(bccwj_path)) stop(paste0("見つかりません：", bccwj_path))
