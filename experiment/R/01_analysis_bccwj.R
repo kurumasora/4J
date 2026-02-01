@@ -92,3 +92,4 @@ p3 <- ggplot(song_bccwj, aes(x = GroupDir, y = unmatched_rt)) +
 ggsave(file.path(out_dir, "plots", "box_unmatched_rt.png"), p3, width = 6, height = 4, dpi = 200)
 
 message("分析1完了：", normalizePath(out_dir))
+1
